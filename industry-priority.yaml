@@ -1,0 +1,173 @@
+# industry-priority.yaml
+
+# AI Design Library Industry Loading Priority v1.0
+
+industry_loading:
+
+  version: "1.0"
+
+  purpose: "Defines which industry registries Codex should load based on project industry, product type, and enabled modules."
+
+default_behavior:
+
+  load_all_industries: false
+
+  load_only_relevant_industries: true
+
+  ask_before_loading_secondary_industries: true
+
+  skip_disabled_industries: true
+
+industry_registry_paths:
+
+  banking: "./registries/industries/banking.yaml"
+
+  insurance: "./registries/industries/insurance.yaml"
+
+  fintech: "./registries/industries/fintech.yaml"
+
+  mobility: "./registries/industries/mobility.yaml"
+
+  ai_platform: "./registries/industries/ai-platform.yaml"
+
+  marketplace: "./registries/industries/marketplace.yaml"
+
+  healthcare: "./registries/industries/healthcare.yaml"
+
+  government: "./registries/industries/government.yaml"
+
+industry_rules:
+
+  banking:
+
+    enabled_by_default_for:
+
+      industries: [banking]
+
+      product_types: [mobile_app, customer_portal, responsive_web_app]
+
+    recommended_secondary_industries: [fintech]
+
+  insurance:
+
+    enabled_by_default_for:
+
+      industries: [insurance]
+
+      product_types: [mobile_app, customer_portal, responsive_web_app]
+
+    recommended_secondary_industries: [banking, fintech]
+
+  fintech:
+
+    enabled_by_default_for:
+
+      industries: [fintech]
+
+      product_types: [mobile_app, responsive_web_app, customer_portal]
+
+    recommended_secondary_industries: [banking]
+
+  mobility:
+
+    enabled_by_default_for:
+
+      industries: [mobility]
+
+      product_types: [mobile_app, super_app, responsive_web_app]
+
+    recommended_secondary_industries: [fintech]
+
+  ai_platform:
+
+    enabled_by_default_for:
+
+      industries: [ai_platform]
+
+      product_types: [admin_dashboard, management_console, ai_workspace, internal_tool]
+
+    recommended_secondary_industries: []
+
+  marketplace:
+
+    enabled_by_default_for:
+
+      industries: [marketplace, e_commerce]
+
+      product_types: [mobile_app, responsive_web_app, marketplace]
+
+    recommended_secondary_industries: [fintech]
+
+  healthcare:
+
+    enabled_by_default_for:
+
+      industries: [healthcare]
+
+      product_types: [mobile_app, customer_portal, responsive_web_app]
+
+    recommended_secondary_industries: [insurance]
+
+  government:
+
+    enabled_by_default_for:
+
+      industries: [government]
+
+      product_types: [customer_portal, responsive_web_app, internal_tool]
+
+    recommended_secondary_industries: []
+
+project_examples:
+
+  allianz_mobile:
+
+    primary_industry: insurance
+
+    load_industries: [insurance, banking, fintech]
+
+  denizbank_mobile:
+
+    primary_industry: banking
+
+    load_industries: [banking, fintech]
+
+  ziraatpay:
+
+    primary_industry: fintech
+
+    load_industries: [fintech, banking]
+
+  binbin_super_app:
+
+    primary_industry: mobility
+
+    load_industries: [mobility, fintech]
+
+  prometa_ai_platform:
+
+    primary_industry: ai_platform
+
+    load_industries: [ai_platform]
+
+codex_rules:
+
+  always:
+
+    - "Read industry-priority.yaml before loading industry registries."
+
+    - "Load only the primary industry registry by default."
+
+    - "Ask before loading recommended secondary industries."
+
+    - "Never load all industry registries unless explicitly requested."
+
+    - "Use secondary industries only when product requirements justify them."
+
+  never:
+
+    - "Do not generate components from unrelated industries."
+
+    - "Do not mix industry registries without designer approval."
+
+    - "Do not use industry-specific components when core components are sufficient."
