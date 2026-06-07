@@ -53,15 +53,26 @@ design-library-system/
 └─ registries/
 
 Key Files
+file:ai-design-library-spec.md   
+purpose:Main generation rules
 
-File                          Purpose
-ai-design-library-spec.md     Main generation rules
-project-config.yaml           Project configuration
-project-tokens.yaml           Token definitions
-component-registry.yaml       Component inventory
-industry-priority.yaml        Industry loading rules
-design-md-template.md         Page specification template
-figma-governance-spec.md      Figma workflow rules
+file:project-config.yaml         
+purpose:Project configuration
+
+file:project-tokens.yaml         
+purpose:Token definitions
+
+file:component-registry.yaml    
+purpose:Component inventory
+
+file:industry-priority.yaml      
+purpose:Industry loading rules
+
+file:design-md-template.md      
+purpose:Page specification template
+
+file:figma-governance-spec.md    
+purpose:Figma workflow rules
 
 Example Prompt
 Read this repository.
