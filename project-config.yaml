@@ -185,6 +185,30 @@ accessibility:
 generation:
   strategy: "core_first"
 
+  generation_rules:
+
+  source_required: true
+
+  valid_sources:
+
+    - figma_file
+
+    - figma_branch
+
+    - figma_library
+
+    - figma_export
+
+  behavior_when_source_missing:
+
+    action: ask_questions
+
+    block_generation: true
+
+  behavior_when_source_available:
+
+    action: inspect_then_generate
+
   generate:
     foundations: true
     core_components: true
