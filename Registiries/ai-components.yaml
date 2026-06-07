@@ -1,0 +1,217 @@
+# registries/ai-components.yaml
+# AI Design Library AI Components Registry v1.0
+
+ai_components:
+
+  prompt_input:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    composed_of:
+      - textarea
+      - icon_button
+      - action_group
+    variants:
+      - default
+      - focused
+      - generating
+      - disabled
+    accessibility:
+      required: true
+    description: "Primary prompt entry component."
+
+  suggestion_chips:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - chip
+    variants:
+      - single
+      - grouped
+    accessibility:
+      required: true
+    description: "Suggested prompts or quick actions."
+
+  ai_message:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - avatar
+      - text
+      - action_group
+    variants:
+      - default
+      - generating
+      - completed
+      - error
+    accessibility:
+      required: true
+    description: "AI generated message."
+
+  user_message:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - avatar
+      - text
+    variants:
+      - default
+    accessibility:
+      required: true
+    description: "User generated message."
+
+  source_reference:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - badge
+      - text
+      - icon_button
+    variants:
+      - article
+      - document
+      - website
+      - database
+    accessibility:
+      required: true
+    description: "Citation or source reference."
+
+  source_reference_panel:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - source_reference
+      - search_bar
+      - filter_group
+    variants:
+      - compact
+      - expanded
+    accessibility:
+      required: true
+    description: "Panel displaying sources and references."
+
+  confidence_score:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - badge
+      - progress
+    variants:
+      - low
+      - medium
+      - high
+    accessibility:
+      required: true
+    description: "Confidence indicator for AI outputs."
+
+  ai_generated_badge:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - badge
+      - icon
+    variants:
+      - default
+    accessibility:
+      required: true
+    description: "Marks AI-generated content."
+
+  human_review_badge:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - badge
+      - icon
+    variants:
+      - pending
+      - approved
+      - rejected
+    accessibility:
+      required: true
+    description: "Human review status indicator."
+
+  automation_status:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - status_indicator
+      - icon
+    variants:
+      - active
+      - paused
+      - failed
+      - completed
+    accessibility:
+      required: true
+    description: "Automation execution status."
+
+  agent_card:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - avatar
+      - status_indicator
+      - metric_item
+      - action_group
+    variants:
+      - compact
+      - detailed
+    accessibility:
+      required: true
+    description: "AI agent summary card."
+
+  tool_call_log:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - list_item
+      - status_indicator
+      - source_reference
+    variants:
+      - compact
+      - expanded
+    accessibility:
+      required: true
+    description: "Execution history of tools and actions."
+
+  ai_assistant_panel:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - prompt_input
+      - ai_message
+      - user_message
+      - suggestion_chips
+    variants:
+      - collapsed
+      - expanded
+      - docked
+      - floating
+    accessibility:
+      required: true
+    description: "Embedded AI assistant experience."

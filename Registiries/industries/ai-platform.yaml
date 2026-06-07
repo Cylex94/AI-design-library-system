@@ -1,0 +1,553 @@
+# registries/industries/ai-platform.yaml
+# AI Design Library AI Platform Industry Registry v1.0
+
+industry:
+  name: "ai_platform"
+  version: "1.0"
+  language: "en"
+  description: "Industry-specific components, patterns, and templates for AI platforms, agent systems, monitoring consoles, orchestration tools, and AI workspaces."
+
+rules:
+  industry_components_must_extend_core_library: true
+  industry_components_must_not_fork_core_components: true
+  industry_components_must_use_existing_tokens: true
+  industry_components_must_use_auto_layout: true
+  industry_components_must_include_accessibility_notes: true
+  industry_components_must_include_usage_notes: true
+  industry_components_must_be_documented: true
+
+component_groups:
+
+  agents:
+    description: "AI agent identity, status, performance, and configuration components."
+
+    components:
+      agent_overview_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [agent_card, status_indicator, metric_item, action_group]
+        variants: [active, paused, failed, draft]
+        accessibility:
+          required: true
+        description: "Displays an AI agent with state, role, performance, and quick actions."
+
+      agent_status:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [status_indicator, badge]
+        variants: [active, paused, failed, training, offline]
+        accessibility:
+          required: true
+        description: "Displays operational state of an AI agent."
+
+      agent_metric_panel:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, chart_container, confidence_score]
+        variants: [quality, maturity, security, cost, usage]
+        accessibility:
+          required: true
+        description: "Displays key AI agent metrics."
+
+      agent_configuration_panel:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [form_section, switch, select_group, alert]
+        variants: [model, tools, memory, permissions, guardrails]
+        accessibility:
+          required: true
+        description: "Configuration panel for AI agent behavior and connected capabilities."
+
+      agent_template_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, badge, metric_item, action_group]
+        variants: [research, support, sales, operations, compliance, custom]
+        accessibility:
+          required: true
+        description: "Reusable template card for creating AI agents."
+
+  models:
+    description: "Model selection, model performance, provider, and evaluation components."
+
+    components:
+      model_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, badge, metric_item, action_group]
+        variants: [llm, embedding, vision, audio, custom]
+        accessibility:
+          required: true
+        description: "Displays model information, provider, capability, and usage."
+
+      model_selector:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [select, model_card, tooltip]
+        variants: [single, multi, recommended]
+        accessibility:
+          required: true
+        description: "Allows selection of a model or model provider."
+
+      model_eval_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, metric_item, chart_container, status_indicator]
+        variants: [quality, latency, cost, safety, benchmark]
+        accessibility:
+          required: true
+        description: "Displays model evaluation results."
+
+      model_comparison_table:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [table, metric_item, status_indicator]
+        variants: [quality, cost, latency, safety]
+        accessibility:
+          required: true
+        description: "Compares models across multiple dimensions."
+
+  tools_mcp:
+    description: "Tool registry, MCP server, integration, connector, and capability components."
+
+    components:
+      mcp_server_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, status_indicator, metric_item, action_group]
+        variants: [connected, disconnected, degraded, error]
+        accessibility:
+          required: true
+        description: "Displays MCP server status, tools, and connection health."
+
+      tool_registry_item:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [list_item, badge, status_indicator]
+        variants: [available, restricted, deprecated, error]
+        accessibility:
+          required: true
+        description: "Displays an available AI tool or capability."
+
+      connector_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, status_indicator, action_group]
+        variants: [connected, disconnected, needs_auth, error]
+        accessibility:
+          required: true
+        description: "Displays an external connector or integration."
+
+      permission_scope_badge:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [badge, tooltip]
+        variants: [read, write, admin, restricted]
+        accessibility:
+          required: true
+        description: "Shows permission scope for tools, agents, or integrations."
+
+  monitoring:
+    description: "Monitoring, health, trace, cost, usage, and reliability components."
+
+    components:
+      cost_widget:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, chart_container, alert]
+        variants: [daily, monthly, projected, anomaly]
+        accessibility:
+          required: true
+        description: "Displays AI cost, trend, and anomalies."
+
+      platform_health_widget:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, status_indicator, alert]
+        variants: [healthy, degraded, incident, maintenance]
+        accessibility:
+          required: true
+        description: "Displays platform operational health."
+
+      trace_viewer:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [timeline, tool_call_log, source_reference_panel]
+        variants: [compact, detailed, debug]
+        accessibility:
+          required: true
+        description: "Displays AI execution trace, tool calls, and source references."
+
+      rag_pipeline_status:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [status_indicator, chart_container, key_value_row]
+        variants: [indexed, syncing, failed, stale]
+        accessibility:
+          required: true
+        description: "Displays RAG indexing and retrieval pipeline state."
+
+      slo_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, progress, alert]
+        variants: [latency, availability, error_rate, quality]
+        accessibility:
+          required: true
+        description: "Displays service level objective performance."
+
+  safety_governance:
+    description: "Safety policy, guardrail, compliance, audit, and risk components."
+
+    components:
+      ai_policy_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, status_indicator, action_group]
+        variants: [active, draft, deprecated, violation]
+        accessibility:
+          required: true
+        description: "Displays an AI policy with state and actions."
+
+      guardrail_status_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, status_indicator, metric_item, alert]
+        variants: [passing, warning, failing, disabled]
+        accessibility:
+          required: true
+        description: "Displays guardrail state and violations."
+
+      compliance_summary:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, status_indicator, audit_log_pattern]
+        variants: [compliant, attention_needed, non_compliant]
+        accessibility:
+          required: true
+        description: "Summarizes compliance posture."
+
+      audit_event_row:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [table_row, status_indicator, source_reference]
+        variants: [policy_change, tool_call, access_change, violation]
+        accessibility:
+          required: true
+        description: "Displays a single AI audit event."
+
+      human_review_queue_item:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [list_item, human_review_badge, confidence_score, action_group]
+        variants: [pending, approved, rejected, escalated]
+        accessibility:
+          required: true
+        description: "Displays an item requiring human review."
+
+  automation_workflows:
+    description: "Automation, workflow, execution, queue, and orchestration components."
+
+    components:
+      automation_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, automation_status, metric_item, action_group]
+        variants: [active, paused, failed, completed]
+        accessibility:
+          required: true
+        description: "Displays an automation with state, trigger, and performance."
+
+      workflow_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, step_indicator, status_indicator]
+        variants: [draft, active, failed, completed]
+        accessibility:
+          required: true
+        description: "Displays workflow structure and state."
+
+      execution_status_panel:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [tool_call_log, status_indicator, alert]
+        variants: [running, completed, failed, partial]
+        accessibility:
+          required: true
+        description: "Displays execution progress and result."
+
+      queue_status_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, status_indicator, chart_container]
+        variants: [normal, delayed, blocked, overloaded]
+        accessibility:
+          required: true
+        description: "Displays automation or agent queue health."
+
+  ai_research_intelligence:
+    description: "Insight, confidence, tagging, knowledge graph, and research intelligence components."
+
+    components:
+      insight_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, confidence_score, source_reference, action_group]
+        variants: [opportunity, pain_point, risk, recommendation]
+        accessibility:
+          required: true
+        description: "Displays an AI-generated or research-backed insight."
+
+      confidence_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, confidence_score, metric_item]
+        variants: [low, medium, high]
+        accessibility:
+          required: true
+        description: "Displays confidence score with supporting context."
+
+      knowledge_graph_node:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, badge, status_indicator]
+        variants: [persona, need, insight, quote, task, feature]
+        accessibility:
+          required: true
+        description: "Represents a node in a knowledge graph."
+
+      tagging_panel:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [filter_chip_group, search_bar, action_group]
+        variants: [manual, ai_suggested, mixed]
+        accessibility:
+          required: true
+        description: "Supports manual and AI-assisted tagging."
+
+  ai_native_workspace:
+    description: "Prompt workspace, source explorer, response review, and AI-native working components."
+
+    components:
+      prompt_workspace:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [prompt_input, source_reference_panel, tool_call_log]
+        variants: [single_prompt, multi_step, agentic]
+        accessibility:
+          required: true
+        description: "Workspace for composing prompts, reviewing sources, and monitoring execution."
+
+      source_explorer:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [source_reference_panel, search_bar, filter_group]
+        variants: [documents, web, database, mixed]
+        accessibility:
+          required: true
+        description: "Explore sources used by AI outputs."
+
+      response_review_panel:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [ai_message, confidence_score, human_review_badge, action_group]
+        variants: [pending, approved, rejected, needs_revision]
+        accessibility:
+          required: true
+        description: "Review and approve AI-generated responses."
+
+patterns:
+  agent_management_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [agent_overview_card, agent_status, agent_metric_panel, agent_configuration_panel]
+    accessibility:
+      required: true
+    description: "Manage AI agents, their status, configuration, and performance."
+
+  model_evaluation_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [model_card, model_eval_card, model_comparison_table]
+    accessibility:
+      required: true
+    description: "Evaluate and compare AI models across key dimensions."
+
+  mcp_management_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [mcp_server_card, tool_registry_item, connector_card, permission_scope_badge]
+    accessibility:
+      required: true
+    description: "Manage MCP servers, tools, connectors, and permission scopes."
+
+  ai_monitoring_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [cost_widget, platform_health_widget, trace_viewer, rag_pipeline_status, slo_card]
+    accessibility:
+      required: true
+    description: "Monitor AI cost, reliability, execution, and platform health."
+
+  ai_safety_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [ai_policy_card, guardrail_status_card, compliance_summary, audit_event_row]
+    accessibility:
+      required: true
+    description: "Manage AI policies, guardrails, compliance, and audit events."
+
+  human_review_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [human_review_queue_item, response_review_panel, confidence_score, action_group]
+    accessibility:
+      required: true
+    description: "Review AI-generated outputs with human oversight."
+
+  automation_orchestration_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [automation_card, workflow_card, execution_status_panel, queue_status_card]
+    accessibility:
+      required: true
+    description: "Manage automated workflows and execution states."
+
+  research_intelligence_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [insight_card, confidence_card, knowledge_graph_node, tagging_panel]
+    accessibility:
+      required: true
+    description: "Analyze research data, generate insights, and manage knowledge structures."
+
+templates:
+  ai_platform_overview_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [page_header, cost_widget, platform_health_widget, agent_metric_panel, trace_viewer]
+    accessibility:
+      required: true
+    description: "Overview page for AI platform performance, health, cost, and activity."
+
+  agent_management_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [page_header, filter_panel, agent_overview_card, agent_configuration_panel]
+    accessibility:
+      required: true
+    description: "Agent management page for creating, monitoring, and configuring agents."
+
+  monitoring_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [page_header, platform_health_widget, trace_viewer, rag_pipeline_status, slo_card]
+    accessibility:
+      required: true
+    description: "Monitoring page for AI platform reliability and execution health."
+
+  safety_governance_page:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [page_header, ai_policy_card, guardrail_status_card, compliance_summary, audit_event_row]
+    accessibility:
+      required: true
+    description: "Safety and governance page for policies, guardrails, and compliance."
+
+  automation_page:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [page_header, automation_card, workflow_card, execution_status_panel, queue_status_card]
+    accessibility:
+      required: true
+    description: "Automation management page for workflows, executions, and queues."
+
+  research_repository_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [page_header, search_bar, filter_panel, insight_card, tagging_panel]
+    accessibility:
+      required: true
+    description: "Research intelligence repository page for insights, tagging, search, and confidence."

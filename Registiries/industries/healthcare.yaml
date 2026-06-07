@@ -1,0 +1,425 @@
+# registries/industries/healthcare.yaml
+# AI Design Library Healthcare Industry Registry v1.0
+
+industry:
+  name: "healthcare"
+  version: "1.0"
+  language: "en"
+  description: "Industry-specific components, patterns, and templates for healthcare, appointment, patient portal, telemedicine, prescription, and medical record products."
+
+rules:
+  industry_components_must_extend_core_library: true
+  industry_components_must_not_fork_core_components: true
+  industry_components_must_use_existing_tokens: true
+  industry_components_must_use_auto_layout: true
+  industry_components_must_include_accessibility_notes: true
+  industry_components_must_include_usage_notes: true
+  industry_components_must_be_documented: true
+
+component_groups:
+
+  appointments:
+    description: "Appointment booking, appointment detail, schedule, and reminder components."
+
+    components:
+      appointment_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, key_value_row, action_group]
+        variants: [upcoming, completed, cancelled, missed, rescheduled]
+        accessibility:
+          required: true
+        description: "Displays appointment date, doctor, department, location, and status."
+
+      appointment_timeline:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [timeline, status_indicator, list_item]
+        variants: [upcoming, history, treatment_plan]
+        accessibility:
+          required: true
+        description: "Displays appointment history or upcoming appointment sequence."
+
+      appointment_slot_picker:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [date_picker, segmented_control, action_group]
+        variants: [day_view, week_view, first_available]
+        accessibility:
+          required: true
+        description: "Allows users to select available appointment slots."
+
+      appointment_reminder:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [alert, appointment_card, action_group]
+        variants: [upcoming, check_in_required, delayed]
+        accessibility:
+          required: true
+        description: "Reminder for upcoming appointments or required check-in."
+
+  providers:
+    description: "Doctor, hospital, clinic, department, and provider profile components."
+
+    components:
+      doctor_profile_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, avatar, rating_summary, action_group]
+        variants: [available, unavailable, recommended, favorite]
+        accessibility:
+          required: true
+        description: "Displays doctor profile, specialty, availability, and rating."
+
+      clinic_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, action_group]
+        variants: [hospital, clinic, lab, pharmacy]
+        accessibility:
+          required: true
+        description: "Displays healthcare facility information."
+
+      department_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, icon, action_group]
+        variants: [cardiology, dermatology, pediatrics, emergency, custom]
+        accessibility:
+          required: true
+        description: "Displays a medical department or specialty."
+
+      provider_availability_status:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [status_indicator, badge, tooltip]
+        variants: [available_today, next_available, unavailable, emergency_only]
+        accessibility:
+          required: true
+        description: "Shows doctor or provider availability."
+
+  medical_records:
+    description: "Medical record, lab result, prescription, diagnosis, and document components."
+
+    components:
+      medical_record_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, key_value_row, action_group]
+        variants: [diagnosis, visit_note, imaging, lab_result, discharge]
+        accessibility:
+          required: true
+        description: "Displays a patient medical record item."
+
+      lab_result_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, status_indicator, alert]
+        variants: [normal, abnormal, critical, pending]
+        accessibility:
+          required: true
+        description: "Displays lab result summary and status."
+
+      prescription_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, status_indicator, action_group]
+        variants: [active, expired, refill_available, cancelled]
+        accessibility:
+          required: true
+        description: "Displays prescription medication, dosage, and refill state."
+
+      medication_schedule_item:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web]
+        composed_of: [list_item, status_indicator, action_group]
+        variants: [upcoming, taken, missed, skipped]
+        accessibility:
+          required: true
+        description: "Displays medication schedule and adherence state."
+
+      health_document_item:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [list_item, icon_button, badge]
+        variants: [report, prescription, referral, consent, invoice]
+        accessibility:
+          required: true
+        description: "Displays healthcare-related documents."
+
+  telemedicine:
+    description: "Virtual consultation, doctor call, chat, waiting room, and care session components."
+
+    components:
+      consultation_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, doctor_profile_card, status_indicator, action_group]
+        variants: [scheduled, waiting, live, completed, cancelled]
+        accessibility:
+          required: true
+        description: "Displays telemedicine consultation state."
+
+      virtual_waiting_room:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [empty_state, appointment_card, alert]
+        variants: [waiting, delayed, ready]
+        accessibility:
+          required: true
+        description: "Waiting experience before virtual consultation."
+
+      consultation_summary:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, prescription_card, action_group]
+        variants: [after_visit, follow_up_required, prescription_available]
+        accessibility:
+          required: true
+        description: "Post-consultation summary."
+
+      symptom_input_panel:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [form_section, chip, alert]
+        variants: [guided, free_text, ai_assisted]
+        accessibility:
+          required: true
+        description: "Collects symptoms before consultation or triage."
+
+  insurance_billing:
+    description: "Healthcare billing, insurance eligibility, claim, and payment components."
+
+    components:
+      eligibility_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, key_value_row, alert]
+        variants: [eligible, partially_covered, not_eligible, unknown]
+        accessibility:
+          required: true
+        description: "Displays insurance eligibility for a healthcare service."
+
+      healthcare_payment_summary:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [key_value_row, amount_display, alert]
+        variants: [before_payment, after_payment, insurance_applied]
+        accessibility:
+          required: true
+        description: "Summarizes healthcare service payment."
+
+      medical_claim_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, amount_display, action_group]
+        variants: [submitted, reviewing, approved, rejected, paid]
+        accessibility:
+          required: true
+        description: "Displays medical insurance claim."
+
+  safety_privacy:
+    description: "Consent, privacy, emergency, and sensitive health data components."
+
+    components:
+      consent_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, checkbox_group, alert, action_group]
+        variants: [data_sharing, treatment, telemedicine, marketing]
+        accessibility:
+          required: true
+        description: "Displays and collects healthcare consent."
+
+      emergency_contact_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web]
+        composed_of: [card, key_value_row, action_group]
+        variants: [primary, secondary, missing]
+        accessibility:
+          required: true
+        description: "Displays emergency contact details."
+
+      privacy_notice_panel:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [alert, card, action_group]
+        variants: [short, detailed, required_acknowledgement]
+        accessibility:
+          required: true
+        description: "Explains data privacy and sensitive health data handling."
+
+  ai_healthcare:
+    description: "AI-assisted triage, care suggestions, health insight, and review components."
+
+    components:
+      ai_triage_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, ai_generated_badge, confidence_score, alert, action_group]
+        variants: [low_risk, medium_risk, urgent, emergency]
+        accessibility:
+          required: true
+        description: "AI-generated triage guidance with risk level and next steps."
+
+      care_suggestion_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, ai_generated_badge, source_reference, action_group]
+        variants: [appointment, medication, lifestyle, follow_up]
+        accessibility:
+          required: true
+        description: "AI-supported care suggestion."
+
+      clinical_review_queue_item:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [human_review_queue_item, confidence_score, status_indicator]
+        variants: [pending, approved, escalated, rejected]
+        accessibility:
+          required: true
+        description: "Human clinical review item for AI-assisted outputs."
+
+patterns:
+  appointment_booking_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [doctor_profile_card, appointment_slot_picker, appointment_card, appointment_reminder]
+    accessibility:
+      required: true
+    description: "Find provider, select slot, book, and manage appointment."
+
+  patient_record_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [medical_record_card, lab_result_card, prescription_card, health_document_item]
+    accessibility:
+      required: true
+    description: "View patient medical records, lab results, prescriptions, and documents."
+
+  telemedicine_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [consultation_card, virtual_waiting_room, symptom_input_panel, consultation_summary]
+    accessibility:
+      required: true
+    description: "Virtual consultation and follow-up experience."
+
+  healthcare_billing_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [eligibility_card, healthcare_payment_summary, medical_claim_card]
+    accessibility:
+      required: true
+    description: "Insurance eligibility, medical payment, and claim flow."
+
+  ai_triage_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [symptom_input_panel, ai_triage_card, care_suggestion_card, clinical_review_queue_item]
+    accessibility:
+      required: true
+    description: "AI-assisted symptom triage with human review support."
+
+templates:
+  healthcare_home_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [appointment_card, doctor_profile_card, prescription_card, health_document_item]
+    accessibility:
+      required: true
+    description: "Healthcare home page with appointments, providers, prescriptions, and records."
+
+  appointment_booking_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [doctor_profile_card, appointment_slot_picker, appointment_card, action_group]
+    accessibility:
+      required: true
+    description: "Appointment booking page."
+
+  medical_records_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [page_header, medical_record_card, lab_result_card, prescription_card, filter_panel]
+    accessibility:
+      required: true
+    description: "Medical records and documents page."
+
+  telemedicine_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [consultation_card, virtual_waiting_room, symptom_input_panel, consultation_summary]
+    accessibility:
+      required: true
+    description: "Telemedicine consultation page."
+
+  ai_triage_page:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [symptom_input_panel, ai_triage_card, care_suggestion_card, clinical_review_queue_item]
+    accessibility:
+      required: true
+    description: "AI-assisted triage page."

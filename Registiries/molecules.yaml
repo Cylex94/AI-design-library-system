@@ -1,0 +1,336 @@
+# registries/molecules.yaml
+# AI Design Library Molecules Registry v1.0
+
+molecules:
+  form_field:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [label, helper_text, error_message, input]
+    variants: [size, state, theme, density]
+    description: "A complete form field structure with label, input, helper text, and error message."
+
+  search_bar:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [input, icon_button]
+    variants: [size, state, theme, density]
+    description: "A search input pattern with optional icon, clear action, and submit behavior."
+
+  segmented_control:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [button]
+    variants: [size, state, theme, density]
+    description: "A compact group of mutually exclusive options used for switching views or modes."
+
+  breadcrumb:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [text, icon]
+    variants: [size, theme]
+    description: "A navigation aid that shows the user’s location within a hierarchy."
+
+  pagination:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [button, icon_button]
+    variants: [size, state, theme, density]
+    description: "A control group for navigating through paginated content."
+
+  status_indicator:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [badge, icon]
+    variants: [type, size, state, theme]
+    description: "A compact status display using icon, color, and label."
+
+  action_group:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [button, icon_button]
+    variants: [layout, size, density]
+    description: "A grouped set of related actions such as primary, secondary, and tertiary actions."
+
+  input_group:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [input, button, icon_button]
+    variants: [size, state, theme, density]
+    description: "A compound input structure with prefix, suffix, icon, or action."
+
+  select_group:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [select, label, helper_text]
+    variants: [size, state, theme, density]
+    description: "A select control wrapped with label, helper text, and validation messaging."
+
+  checkbox_group:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [checkbox, label, helper_text]
+    variants: [layout, state, theme, density]
+    description: "A group of related checkbox options."
+
+  radio_group:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [radio, label, helper_text]
+    variants: [layout, state, theme, density]
+    description: "A group of mutually exclusive radio options."
+
+  toggle_group:
+    priority: core
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [switch, label, helper_text]
+    variants: [layout, state, theme, density]
+    description: "A grouped switch/toggle control with label and supporting text."
+
+  tab_group:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [button, text, icon]
+    variants: [type, size, state, theme, density, layout]
+    description: "A horizontal or vertical group of tabs used to switch between related content sections."
+
+  filter_chip_group:
+    priority: advanced
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [chip]
+    variants: [type, state, theme, layout]
+    description: "A group of chips used for active filters, quick filters, or selected criteria."
+
+  date_picker:
+    priority: advanced
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [input, icon_button, calendar_panel]
+    variants: [size, state, theme, density]
+    description: "A date input pattern with calendar selection behavior."
+
+  date_range_picker:
+    priority: advanced
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [date_picker]
+    variants: [size, state, theme, density]
+    description: "A date range selection pattern for filtering and reporting interfaces."
+
+  time_picker:
+    priority: advanced
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [input, icon_button]
+    variants: [size, state, theme, density]
+    description: "A time input pattern for selecting or entering time values."
+
+  filter_group:
+    priority: advanced
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [select, checkbox, chip, button]
+    variants: [layout, state, theme, density]
+    description: "A reusable group of filters used in data-heavy interfaces."
+
+  file_upload:
+    priority: advanced
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [button, icon, progress]
+    variants: [type, size, state, theme]
+    description: "A file upload control supporting drag-and-drop, upload state, and progress."
+
+  step_indicator:
+    priority: advanced
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [text, icon, divider]
+    variants: [type, size, state, theme, layout]
+    description: "A visual indicator showing progress across steps."
+
+  notification_item:
+    priority: advanced
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [icon, text, badge, button]
+    variants: [type, state, theme]
+    description: "A single notification row or card used inside notification lists or centers."
+
+  menu_item:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [icon, text, badge]
+    variants: [type, size, state, theme, density]
+    description: "A selectable navigation or action item used in menus, sidebars, and dropdowns."
+
+  dropdown_menu_item:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [icon, text, shortcut, badge]
+    variants: [type, state, theme, density]
+    description: "A menu item used inside dropdown menus with optional icon, shortcut, or badge."
+
+  list_item:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [avatar, icon, text, badge, action]
+    variants: [type, size, state, theme, density]
+    description: "A reusable list row pattern for displaying compact content with optional actions."
+
+  key_value_row:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [label, value, icon]
+    variants: [size, state, theme, density]
+    description: "A row used to display label-value pairs in detail views and summaries."
+
+  metric_item:
+    priority: advanced
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [label, value, trend, icon]
+    variants: [type, size, state, theme]
+    description: "A compact metric display used inside dashboard cards."
+
+  empty_state_content:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [icon, title, description, button]
+    variants: [type, size, theme]
+    description: "The content structure used in empty states, no-result states, and first-use experiences."
+
+  toast_content:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [icon, title, description, action, close_button]
+    variants: [type, state, theme]
+    description: "The inner content structure for toast notifications."
+
+  alert_content:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [icon, title, description, action]
+    variants: [type, state, theme]
+    description: "The inner content structure for inline alerts and feedback messages."
+
+  card_header:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [title, description, action]
+    variants: [size, state, theme, density]
+    description: "A reusable card header with title, supporting text, and optional action."
+
+  card_footer:
+    priority: core
+    required: false
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [button, text]
+    variants: [layout, size, theme, density]
+    description: "A reusable card footer for actions, metadata, or secondary information."
+
+  table_cell:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [text, icon, badge, action]
+    variants: [type, size, state, theme, density, alignment]
+    description: "A reusable table cell structure supporting text, status, action, and custom content."
+
+  table_row:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [table_cell]
+    variants: [state, theme, density]
+    description: "A reusable table row built from table cells."
+
+  table_header_cell:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [text, icon, sort_indicator]
+    variants: [state, theme, density, alignment]
+    description: "A reusable table header cell supporting sorting and alignment."
+
+  table_toolbar:
+    priority: advanced
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [search_bar, filter_group, action_group]
+    variants: [layout, state, theme, density]
+    description: "A toolbar for data tables including search, filters, and bulk actions."
+
+  command_item:
+    priority: optional
+    required: false
+    maturity: [4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    includes: [icon, text, shortcut]
+    variants: [type, state, theme]
+    description: "A selectable item used in command palettes and quick action interfaces."
+
+  ai_prompt_suggestion:
+    priority: optional
+    required: false
+    maturity: [3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    includes: [chip, icon, text]
+    variants: [type, state, theme]
+    description: "A suggested prompt or quick action used in AI assistant interfaces."

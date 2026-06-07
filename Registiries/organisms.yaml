@@ -1,0 +1,414 @@
+# registries/organisms.yaml
+# AI Design Library Organisms Registry v1.0
+
+organisms:
+
+  # =====================================================
+  # Navigation
+  # =====================================================
+
+  top_navigation:
+    priority: core
+    required: true
+    maturity: [1,2,3,4,5]
+    platforms: [desktop, responsive_web, tablet]
+    composed_of:
+      - menu_item
+      - action_group
+      - avatar
+      - search_bar
+    variants:
+      - layout
+      - theme
+      - density
+    accessibility:
+      required: true
+    description: "Primary application navigation."
+
+  side_navigation:
+    priority: core
+    required: true
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - menu_item
+      - action_group
+    variants:
+      - collapsed
+      - expanded
+      - theme
+    accessibility:
+      required: true
+    description: "Persistent navigation used in enterprise and dashboard products."
+
+  mobile_navigation:
+    priority: core
+    required: true
+    maturity: [1,2,3,4,5]
+    platforms: [mobile]
+    composed_of:
+      - menu_item
+      - icon
+    variants:
+      - bottom_bar
+      - tab_bar
+    accessibility:
+      required: true
+    description: "Primary mobile navigation."
+
+  page_header:
+    priority: core
+    required: true
+    maturity: [1,2,3,4,5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    composed_of:
+      - breadcrumb
+      - action_group
+      - status_indicator
+    variants:
+      - size
+      - density
+    accessibility:
+      required: true
+    description: "Page-level header and actions."
+
+  # =====================================================
+  # Feedback
+  # =====================================================
+
+  toast:
+    priority: core
+    required: true
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - toast_content
+    variants:
+      - success
+      - warning
+      - error
+      - info
+    accessibility:
+      required: true
+    description: "Transient feedback message."
+
+  alert:
+    priority: core
+    required: true
+    maturity: [1,2,3,4,5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - alert_content
+    variants:
+      - success
+      - warning
+      - error
+      - info
+    accessibility:
+      required: true
+    description: "Persistent feedback message."
+
+  empty_state:
+    priority: core
+    required: true
+    maturity: [1,2,3,4,5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - empty_state_content
+    variants:
+      - no_data
+      - no_results
+      - onboarding
+    accessibility:
+      required: true
+    description: "Used when content is unavailable."
+
+  # =====================================================
+  # Data Display
+  # =====================================================
+
+  table:
+    priority: core
+    required: true
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - table_header_cell
+      - table_row
+      - pagination
+      - table_toolbar
+    variants:
+      - density
+      - theme
+    accessibility:
+      required: true
+    description: "Standard enterprise table."
+
+  data_grid:
+    priority: advanced
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - table
+      - filter_group
+    variants:
+      - density
+      - theme
+    accessibility:
+      required: true
+    description: "Advanced data-heavy grid."
+
+  metric_card:
+    priority: advanced
+    required: false
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - metric_item
+      - status_indicator
+    variants:
+      - size
+      - theme
+    accessibility:
+      required: true
+    description: "Dashboard KPI card."
+
+  stat_card:
+    priority: advanced
+    required: false
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - metric_item
+    variants:
+      - size
+      - theme
+    accessibility:
+      required: true
+    description: "Simple statistics card."
+
+  chart_container:
+    priority: advanced
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - card_header
+      - action_group
+    variants:
+      - size
+      - theme
+    accessibility:
+      required: true
+    description: "Container for charts and visualizations."
+
+  activity_feed:
+    priority: advanced
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, mobile]
+    composed_of:
+      - list_item
+      - timeline
+    variants:
+      - density
+      - theme
+    accessibility:
+      required: true
+    description: "Chronological activity feed."
+
+  timeline:
+    priority: advanced
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, mobile]
+    composed_of:
+      - list_item
+      - status_indicator
+    variants:
+      - density
+      - theme
+    accessibility:
+      required: true
+    description: "Timeline visualization."
+
+  # =====================================================
+  # Forms
+  # =====================================================
+
+  form_section:
+    priority: core
+    required: true
+    maturity: [1,2,3,4,5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - form_field
+      - action_group
+    variants:
+      - density
+      - theme
+    accessibility:
+      required: true
+    description: "Reusable form section."
+
+  onboarding_stepper:
+    priority: advanced
+    required: false
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, mobile]
+    composed_of:
+      - step_indicator
+      - action_group
+    variants:
+      - horizontal
+      - vertical
+    accessibility:
+      required: true
+    description: "Multi-step onboarding flow."
+
+  # =====================================================
+  # Overlays
+  # =====================================================
+
+  modal:
+    priority: core
+    required: true
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, tablet, mobile]
+    composed_of:
+      - card_header
+      - action_group
+    variants:
+      - size
+      - theme
+    accessibility:
+      required: true
+    description: "Blocking dialog."
+
+  drawer:
+    priority: core
+    required: true
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, mobile]
+    composed_of:
+      - card_header
+      - form_section
+    variants:
+      - left
+      - right
+      - bottom
+    accessibility:
+      required: true
+    description: "Sliding panel."
+
+  command_palette:
+    priority: optional
+    required: false
+    maturity: [4,5]
+    platforms: [desktop, responsive_web]
+    composed_of:
+      - search_bar
+      - command_item
+    variants:
+      - theme
+    accessibility:
+      required: true
+    description: "Keyboard-driven command center."
+
+  # =====================================================
+  # Dashboard
+  # =====================================================
+
+  dashboard_section:
+    priority: advanced
+    required: false
+    maturity: [2,3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - metric_card
+      - chart_container
+      - action_group
+    variants:
+      - theme
+      - density
+    accessibility:
+      required: true
+    description: "Reusable dashboard block."
+
+  notification_center:
+    priority: advanced
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, mobile]
+    composed_of:
+      - notification_item
+      - action_group
+    variants:
+      - theme
+    accessibility:
+      required: true
+    description: "Notification hub."
+
+  filter_panel:
+    priority: advanced
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - filter_group
+      - action_group
+    variants:
+      - theme
+    accessibility:
+      required: true
+    description: "Reusable filtering panel."
+
+  # =====================================================
+  # AI Components
+  # =====================================================
+
+  ai_assistant_panel:
+    priority: optional
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, mobile]
+    composed_of:
+      - ai_prompt_suggestion
+      - prompt_input
+      - ai_message
+      - user_message
+    variants:
+      - collapsed
+      - expanded
+    accessibility:
+      required: true
+    description: "Embedded AI assistant experience."
+
+  agent_card:
+    priority: optional
+    required: false
+    maturity: [3,4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - status_indicator
+      - metric_item
+    variants:
+      - theme
+    accessibility:
+      required: true
+    description: "AI agent overview card."
+
+  tool_call_log:
+    priority: optional
+    required: false
+    maturity: [4,5]
+    platforms: [desktop, responsive_web, admin_dashboard]
+    composed_of:
+      - list_item
+      - status_indicator
+    variants:
+      - density
+    accessibility:
+      required: true
+    description: "Tool execution history."
