@@ -8,6 +8,121 @@ config:
 
 discovery_mode:
   mode: "interactive" # interactive | assisted | automated
+  discovery_questions:
+
+  mandatory_order:
+
+    - project_name
+
+    - product_type
+
+    - industry
+
+    - secondary_industries
+
+    - platforms
+
+    - theme_mode
+
+    - visual_style
+
+    - density
+
+    - accessibility_target
+
+    - maturity_level
+
+    - generation_scope
+
+    - brand_primary_color
+
+  questions:
+
+    project_name:
+
+      question: "Project name?"
+
+      required: true
+
+    product_type:
+
+      question: "Product type?"
+
+      required: true
+
+    industry:
+
+      question: "Industry?"
+
+      required: true
+
+    secondary_industries:
+
+      question: "Secondary industry registries?"
+
+      required: false
+
+    platforms:
+
+      question: "Supported platforms?"
+
+      required: true
+
+    theme_mode:
+
+      question: "Theme mode?"
+
+      required: true
+
+    visual_style:
+
+      question: "Visual style?"
+
+      required: true
+
+    density:
+
+      question: "Density?"
+
+      required: true
+
+    accessibility_target:
+
+      question: "Accessibility target?"
+
+      default: wcag_aa
+
+    maturity_level:
+
+      question: "Maturity level?"
+
+      default: level_2_growth
+
+    generation_scope:
+
+      question: "Generation scope?"
+
+      default: foundations_only
+
+    brand_primary_color:
+
+      question: "Primary brand color?"
+
+      required: true
+
+  rules:
+
+    ask_only_these_questions_first: true
+
+    ask_in_mandatory_order: true
+
+    do_not_add_extra_questions_before_first_generation: true
+
+    summarize_answers_before_generation: true
+
+    require_confirmation_before_figma_generation: true
+
+  
 
   behavior:
     ask_required_questions: true

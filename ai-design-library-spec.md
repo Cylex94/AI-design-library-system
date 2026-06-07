@@ -61,7 +61,28 @@ yaml discovery_mode: true
 
 When discovery mode is enabled:
 
-Codex must ask questions before generating advanced components.
+Codex MUST read the discovery_questions section from project-config.yaml.
+Codex MUST:
+
+- Ask questions in the defined order
+
+- Ask only the defined questions
+
+- Avoid generating custom discovery questions
+
+- Avoid skipping required questions
+
+- Summarize all collected answers
+
+- Request user confirmation before generating anything in Figma
+
+Codex MUST NOT:
+
+- Invent additional discovery questions
+
+- Start generation before confirmation
+
+- Ignore default values defined in project-config.yaml
 
 Questions may include:
 
@@ -74,6 +95,7 @@ Questions may include:
 - Visual style
 
 When discovery mode is disabled:
+
 
 Codex may continue using existing configuration files.
 
