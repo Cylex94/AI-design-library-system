@@ -1,0 +1,487 @@
+# registries/industries/marketplace.yaml
+# AI Design Library Marketplace Industry Registry v1.0
+
+industry:
+  name: "marketplace"
+  version: "1.0"
+  language: "en"
+  description: "Industry-specific components, patterns, and templates for marketplace, e-commerce, seller platforms, product discovery, checkout, and review experiences."
+
+rules:
+  industry_components_must_extend_core_library: true
+  industry_components_must_not_fork_core_components: true
+  industry_components_must_use_existing_tokens: true
+  industry_components_must_use_auto_layout: true
+  industry_components_must_include_accessibility_notes: true
+  industry_components_must_include_usage_notes: true
+  industry_components_must_be_documented: true
+
+component_groups:
+
+  product_discovery:
+    description: "Product listing, discovery, gallery, comparison, and search components."
+
+    components:
+      product_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, badge, amount_display, rating_summary, action_group]
+        variants: [grid, list, promoted, out_of_stock, discounted]
+        accessibility:
+          required: true
+        description: "Displays product image, title, price, rating, status, and actions."
+
+      product_detail_header:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card_header, rating_summary, amount_display, badge]
+        variants: [default, discounted, out_of_stock]
+        accessibility:
+          required: true
+        description: "Product detail title, price, rating, badges, and key actions."
+
+      product_gallery:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, icon_button, pagination]
+        variants: [carousel, grid, zoomable]
+        accessibility:
+          required: true
+        description: "Displays product media gallery with accessible navigation."
+
+      product_comparison_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [responsive_web, desktop]
+        composed_of: [card, key_value_row, rating_summary, action_group]
+        variants: [compact, detailed]
+        accessibility:
+          required: true
+        description: "Compares product attributes, rating, and price."
+
+      product_availability_badge:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [badge, tooltip]
+        variants: [in_stock, low_stock, out_of_stock, preorder]
+        accessibility:
+          required: true
+        description: "Displays product availability state."
+
+  seller:
+    description: "Seller identity, seller trust, rating, store, and fulfillment components."
+
+    components:
+      seller_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, avatar, rating_summary, action_group]
+        variants: [verified, new, top_rated, official_store]
+        accessibility:
+          required: true
+        description: "Displays seller information, trust markers, rating, and actions."
+
+      seller_rating:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [rating_summary, badge, tooltip]
+        variants: [score, reviews, trust_level]
+        accessibility:
+          required: true
+        description: "Displays seller rating and trust signals."
+
+      store_header:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [page_header, seller_card, action_group]
+        variants: [brand_store, individual_seller, marketplace_seller]
+        accessibility:
+          required: true
+        description: "Header for seller or brand store pages."
+
+      fulfillment_badge:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [badge, tooltip]
+        variants: [seller_fulfilled, marketplace_fulfilled, express, pickup]
+        accessibility:
+          required: true
+        description: "Displays fulfillment method or delivery promise."
+
+  reviews:
+    description: "Review, rating, quality signal, and user-generated content components."
+
+    components:
+      review_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, avatar, rating_summary, action_group]
+        variants: [text, media, verified_purchase, highlighted]
+        accessibility:
+          required: true
+        description: "Displays a user review with rating, metadata, and actions."
+
+      rating_summary:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [metric_item, progress, badge]
+        variants: [compact, detailed, distribution]
+        accessibility:
+          required: true
+        description: "Summarizes rating score and rating distribution."
+
+      review_filter:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [filter_group, chip, segmented_control]
+        variants: [rating, media, verified, newest]
+        accessibility:
+          required: true
+        description: "Filters and sorts product reviews."
+
+      trust_signal_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, badge, key_value_row]
+        variants: [verified_seller, buyer_protection, secure_payment, return_policy]
+        accessibility:
+          required: true
+        description: "Displays marketplace trust and safety signals."
+
+  cart_checkout:
+    description: "Cart, checkout, order summary, coupon, shipping, and payment components."
+
+    components:
+      cart_item:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [list_item, amount_display, action_group]
+        variants: [available, unavailable, discounted, quantity_editable]
+        accessibility:
+          required: true
+        description: "Displays a product inside the cart with quantity and price controls."
+
+      cart_summary:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, amount_display, action_group]
+        variants: [compact, detailed]
+        accessibility:
+          required: true
+        description: "Summarizes subtotal, discounts, shipping, taxes, and total."
+
+      checkout_summary:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [cart_summary, payment_method_card, address_card, action_group]
+        variants: [before_payment, after_payment]
+        accessibility:
+          required: true
+        description: "Displays checkout summary before final confirmation."
+
+      coupon_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, badge, amount_display, action_group]
+        variants: [available, applied, expired, invalid]
+        accessibility:
+          required: true
+        description: "Displays coupon or promotion."
+
+      address_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, action_group]
+        variants: [shipping, billing, default, incomplete]
+        accessibility:
+          required: true
+        description: "Displays delivery or billing address."
+
+      shipping_option_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, amount_display, status_indicator, key_value_row]
+        variants: [standard, express, pickup, free]
+        accessibility:
+          required: true
+        description: "Displays selectable shipping options."
+
+  orders_returns:
+    description: "Order tracking, order detail, return, refund, and delivery components."
+
+    components:
+      order_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, amount_display, action_group]
+        variants: [processing, shipped, delivered, cancelled, returned]
+        accessibility:
+          required: true
+        description: "Displays an order with status, amount, date, and actions."
+
+      order_status_timeline:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [timeline, status_indicator, list_item]
+        variants: [processing, shipped, delivered, returned]
+        accessibility:
+          required: true
+        description: "Displays order fulfillment progress."
+
+      return_request_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, action_group, alert]
+        variants: [eligible, pending, approved, rejected]
+        accessibility:
+          required: true
+        description: "Displays return request state and next actions."
+
+      refund_status_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, amount_display, status_indicator]
+        variants: [pending, processed, failed]
+        accessibility:
+          required: true
+        description: "Displays refund amount and status."
+
+      delivery_tracking_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, order_status_timeline, key_value_row]
+        variants: [standard, live_tracking, pickup]
+        accessibility:
+          required: true
+        description: "Displays delivery tracking information."
+
+  seller_operations:
+    description: "Seller dashboard, inventory, listing, fulfillment, and performance components."
+
+    components:
+      seller_dashboard_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [metric_card, chart_container, action_group]
+        variants: [sales, orders, rating, revenue]
+        accessibility:
+          required: true
+        description: "Displays seller performance summary."
+
+      inventory_row:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [table_row, product_availability_badge, amount_display]
+        variants: [in_stock, low_stock, out_of_stock]
+        accessibility:
+          required: true
+        description: "Displays inventory item state inside seller operations."
+
+      listing_status_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [card, status_indicator, action_group]
+        variants: [active, draft, rejected, paused]
+        accessibility:
+          required: true
+        description: "Displays product listing moderation or publication state."
+
+  ai_marketplace:
+    description: "AI-assisted product discovery, seller tools, recommendations, and trust signals."
+
+    components:
+      recommendation_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [product_card, ai_generated_badge, confidence_score]
+        variants: [personalized, similar, trending, sponsored]
+        accessibility:
+          required: true
+        description: "AI-generated product recommendation."
+
+      price_insight_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, amount_display, chart_container, confidence_score]
+        variants: [good_price, price_drop, expensive, historical_low]
+        accessibility:
+          required: true
+        description: "AI-assisted price insight."
+
+      seller_ai_assistant_panel:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [desktop, responsive_web, admin_dashboard]
+        composed_of: [ai_assistant_panel, insight_card, action_group]
+        variants: [listing_help, pricing_help, support_help]
+        accessibility:
+          required: true
+        description: "AI assistant for seller operations."
+
+patterns:
+  product_discovery_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [search_bar, filter_panel, product_card, pagination]
+    accessibility:
+      required: true
+    description: "Browse, search, and filter marketplace products."
+
+  product_detail_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [product_gallery, product_detail_header, seller_card, review_card]
+    accessibility:
+      required: true
+    description: "Explore product details, seller info, and reviews."
+
+  checkout_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [cart_item, cart_summary, checkout_summary, payment_method_card, shipping_option_card]
+    accessibility:
+      required: true
+    description: "Cart to checkout confirmation flow."
+
+  order_tracking_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [order_card, order_status_timeline, delivery_tracking_card]
+    accessibility:
+      required: true
+    description: "Track order, shipment, delivery, return, and refund states."
+
+  seller_operations_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [seller_dashboard_card, inventory_row, listing_status_card, table]
+    accessibility:
+      required: true
+    description: "Seller dashboard and product operations."
+
+  ai_product_recommendation_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [recommendation_card, price_insight_card, source_reference]
+    accessibility:
+      required: true
+    description: "AI-powered marketplace recommendation and decision support."
+
+templates:
+  marketplace_home_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [search_bar, product_card, recommendation_card, campaign_card]
+    accessibility:
+      required: true
+    description: "Marketplace home page with discovery, recommendations, and campaigns."
+
+  product_listing_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [page_header, search_bar, filter_panel, product_card, pagination]
+    accessibility:
+      required: true
+    description: "Product listing and discovery page."
+
+  product_detail_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [product_gallery, product_detail_header, seller_card, review_card, checkout_summary]
+    accessibility:
+      required: true
+    description: "Product detail page."
+
+  checkout_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [cart_item, checkout_summary, address_card, shipping_option_card, payment_method_card]
+    accessibility:
+      required: true
+    description: "Checkout page."
+
+  order_detail_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [order_card, order_status_timeline, delivery_tracking_card, refund_status_card]
+    accessibility:
+      required: true
+    description: "Order detail and tracking page."
+
+  seller_dashboard_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [page_header, seller_dashboard_card, table, inventory_row, listing_status_card]
+    accessibility:
+      required: true
+    description: "Seller operations dashboard."

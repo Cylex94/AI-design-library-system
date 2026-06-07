@@ -1,0 +1,114 @@
+# registries/atoms.yaml
+
+atoms:
+  button:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [type, size, state, theme, density, icon]
+
+  icon_button:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [size, state, theme, density]
+
+  input:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [type, size, state, theme, density, icon]
+
+  textarea:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [size, state, theme, density]
+
+  select:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [size, state, theme, density]
+
+  checkbox:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [state, theme, density]
+
+  radio:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [state, theme, density]
+
+  switch:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [state, theme, density]
+
+  badge:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [type, size, state, theme]
+
+  chip:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [type, size, state, theme, icon]
+
+  avatar:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [size, state]
+
+  divider:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [layout, theme]
+
+  tooltip:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, admin_dashboard]
+    variants: [type, state, theme, placement]
+
+  skeleton:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [type, size, theme]
+
+  spinner:
+    priority: core
+    required: true
+    maturity: [1, 2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [size, theme]
+
+  progress:
+    priority: core
+    required: true
+    maturity: [2, 3, 4, 5]
+    platforms: [desktop, responsive_web, tablet, mobile, admin_dashboard]
+    variants: [type, size, state, theme]

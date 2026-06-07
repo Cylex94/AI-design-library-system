@@ -1,0 +1,449 @@
+# registries/industries/insurance.yaml
+# AI Design Library Insurance Industry Registry v1.0
+
+industry:
+  name: "insurance"
+  version: "1.0"
+  language: "en"
+  description: "Industry-specific components, patterns, and templates for insurance products."
+
+rules:
+  industry_components_must_extend_core_library: true
+  industry_components_must_not_fork_core_components: true
+  industry_components_must_use_existing_tokens: true
+  industry_components_must_use_auto_layout: true
+  industry_components_must_include_accessibility_notes: true
+  industry_components_must_include_usage_notes: true
+  industry_components_must_be_documented: true
+
+component_groups:
+
+  policies:
+    description: "Policy overview, detail, status, and renewal components."
+
+    components:
+      policy_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, action_group, key_value_row]
+        variants: [auto, health, home, travel, life, active, expired, pending]
+        accessibility:
+          required: true
+        description: "Displays an insurance policy with type, status, premium, coverage, and quick actions."
+
+      policy_summary:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [metric_item, card, status_indicator]
+        variants: [compact, detailed]
+        accessibility:
+          required: true
+        description: "Summarizes active policies, renewal dates, total premium, and coverage status."
+
+      policy_detail:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [detail_pattern, key_value_row, alert, action_group]
+        variants: [default, renewal_available, claim_available]
+        accessibility:
+          required: true
+        description: "Detailed policy view with coverage, documents, payment status, and actions."
+
+      policy_status:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [status_indicator, badge]
+        variants: [active, pending, expired, cancelled, suspended]
+        accessibility:
+          required: true
+        description: "Displays the current state of a policy."
+
+      policy_document_item:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [list_item, icon_button, badge]
+        variants: [pdf, contract, receipt, certificate]
+        accessibility:
+          required: true
+        description: "Displays downloadable or viewable policy-related documents."
+
+  coverage:
+    description: "Coverage, guarantee, limit, and comparison components."
+
+    components:
+      coverage_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, key_value_row, status_indicator]
+        variants: [included, excluded, optional, limited]
+        accessibility:
+          required: true
+        description: "Displays a coverage item with limit, status, and explanation."
+
+      coverage_summary:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [coverage_card, metric_item, alert]
+        variants: [compact, detailed]
+        accessibility:
+          required: true
+        description: "Summarizes included and excluded coverages."
+
+      coverage_comparison:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [responsive_web, desktop]
+        composed_of: [table, status_indicator, tooltip]
+        variants: [plans, packages, add_ons]
+        accessibility:
+          required: true
+        description: "Compares coverage options across plans or packages."
+
+      limit_display:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [amount_display, progress, tooltip]
+        variants: [annual, per_claim, remaining, unlimited]
+        accessibility:
+          required: true
+        description: "Displays coverage limits and remaining usable limits."
+
+  claims:
+    description: "Claim creation, tracking, status, and detail components."
+
+    components:
+      claim_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, status_indicator, key_value_row, action_group]
+        variants: [auto, health, home, travel, open, closed, rejected]
+        accessibility:
+          required: true
+        description: "Displays an insurance claim with status, claim number, date, and actions."
+
+      claim_status:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [status_indicator, step_indicator]
+        variants: [submitted, reviewing, document_required, approved, paid, rejected]
+        accessibility:
+          required: true
+        description: "Displays the current state of a claim."
+
+      claim_timeline:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [timeline, status_indicator, list_item]
+        variants: [compact, detailed]
+        accessibility:
+          required: true
+        description: "Shows claim progress and history."
+
+      claim_detail:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [detail_pattern, claim_status, key_value_row, document_upload]
+        variants: [default, missing_documents, payment_pending]
+        accessibility:
+          required: true
+        description: "Detailed claim view with documents, status, assessment, and next steps."
+
+      document_upload:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [file_upload, alert, action_group]
+        variants: [single, multiple, required, optional]
+        accessibility:
+          required: true
+        description: "Upload component for claim documents and supporting files."
+
+      claim_form:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [form_section, step_indicator, file_upload, action_group]
+        variants: [auto, health, home, travel]
+        accessibility:
+          required: true
+        description: "Guided form for submitting a new insurance claim."
+
+  assistance:
+    description: "Emergency, roadside, support, and service request components."
+
+    components:
+      assistance_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, icon, action_group, status_indicator]
+        variants: [roadside, emergency, health, home, travel]
+        accessibility:
+          required: true
+        description: "Displays an available assistance service."
+
+      emergency_assistance_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web]
+        composed_of: [alert, action_group, icon_button]
+        variants: [call, request, track]
+        accessibility:
+          required: true
+        description: "High-priority assistance entry for urgent situations."
+
+      service_request_item:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [list_item, status_indicator, action_group]
+        variants: [open, assigned, completed, cancelled]
+        accessibility:
+          required: true
+        description: "Displays an assistance or service request."
+
+      provider_card:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, rating_summary, key_value_row, action_group]
+        variants: [hospital, repair_shop, towing, agency]
+        accessibility:
+          required: true
+        description: "Displays an insurance service provider or partner."
+
+  renewals:
+    description: "Renewal, offer, payment, and expiry components."
+
+    components:
+      renewal_reminder:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [alert, policy_card, action_group]
+        variants: [upcoming, due_today, expired]
+        accessibility:
+          required: true
+        description: "Reminder for upcoming or expired policy renewal."
+
+      renewal_offer:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, amount_display, coverage_summary, action_group]
+        variants: [same_plan, upgraded_plan, discounted]
+        accessibility:
+          required: true
+        description: "Displays a renewal offer with premium and coverage changes."
+
+      renewal_summary:
+        priority: industry_specific
+        required: false
+        maturity: [3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [key_value_row, amount_display, alert]
+        variants: [before_confirmation, after_confirmation]
+        accessibility:
+          required: true
+        description: "Summarizes renewal details before or after confirmation."
+
+  payments:
+    description: "Premium, installment, receipt, and payment status components."
+
+    components:
+      premium_card:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, amount_display, date_picker, action_group]
+        variants: [monthly, annual, overdue, paid]
+        accessibility:
+          required: true
+        description: "Displays insurance premium information and payment action."
+
+      installment_item:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [list_item, amount_display, status_indicator]
+        variants: [upcoming, paid, overdue]
+        accessibility:
+          required: true
+        description: "Displays a single policy installment."
+
+      receipt_item:
+        priority: industry_specific
+        required: false
+        maturity: [2, 3, 4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [list_item, icon_button, amount_display]
+        variants: [paid, refunded, failed]
+        accessibility:
+          required: true
+        description: "Displays a payment receipt or invoice."
+
+  ai_insurance:
+    description: "AI-assisted insurance recommendations and proactive experiences."
+
+    components:
+      claim_recommendation_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, ai_generated_badge, confidence_score, action_group]
+        variants: [document_needed, next_step, settlement_estimate]
+        accessibility:
+          required: true
+        description: "AI-generated claim guidance or recommendation."
+
+      risk_alert_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [alert, confidence_score, source_reference, action_group]
+        variants: [low, medium, high]
+        accessibility:
+          required: true
+        description: "AI-supported risk notification."
+
+      coverage_suggestion_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, coverage_card, ai_generated_badge, action_group]
+        variants: [add_on, upgrade, gap_detected]
+        accessibility:
+          required: true
+        description: "Suggests coverage improvements based on user context."
+
+      policy_optimization_card:
+        priority: industry_specific
+        required: false
+        maturity: [4, 5]
+        platforms: [mobile, responsive_web, desktop]
+        composed_of: [card, metric_item, confidence_score, action_group]
+        variants: [save_money, improve_coverage, reduce_risk]
+        accessibility:
+          required: true
+        description: "AI-generated policy optimization insight."
+
+patterns:
+  policy_overview_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [policy_summary, policy_card, renewal_reminder]
+    accessibility:
+      required: true
+    description: "Overview of active policies, status, renewals, and quick actions."
+
+  claim_management_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [claim_card, claim_timeline, claim_detail, document_upload]
+    accessibility:
+      required: true
+    description: "Create, track, and manage claims."
+
+  coverage_exploration_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [coverage_summary, coverage_card, coverage_comparison]
+    accessibility:
+      required: true
+    description: "Explore, compare, and understand insurance coverage."
+
+  renewal_flow_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [renewal_reminder, renewal_offer, renewal_summary, premium_card]
+    accessibility:
+      required: true
+    description: "Renew policy with offer review and payment."
+
+  assistance_request_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [assistance_card, emergency_assistance_card, service_request_item, provider_card]
+    accessibility:
+      required: true
+    description: "Request and track assistance services."
+
+  ai_claim_assistance_pattern:
+    priority: industry_specific
+    required: false
+    maturity: [4, 5]
+    composed_of: [claim_recommendation_card, ai_assistant_panel, claim_detail, document_upload]
+    accessibility:
+      required: true
+    description: "AI-assisted claim completion and follow-up."
+
+templates:
+  insurance_home_page:
+    priority: industry_specific
+    required: false
+    maturity: [2, 3, 4, 5]
+    composed_of: [policy_summary, policy_card, renewal_reminder, assistance_card]
+    accessibility:
+      required: true
+    description: "Insurance product home page with policies, renewal reminders, and assistance."
+
+  policy_detail_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [policy_detail, coverage_summary, policy_document_item, premium_card]
+    accessibility:
+      required: true
+    description: "Policy detail page with coverage, documents, and premium information."
+
+  claim_detail_page:
+    priority: industry_specific
+    required: false
+    maturity: [3, 4, 5]
+    composed_of: [claim_detail, claim_timeline, document_upload, claim_recommendation_card]
+    accessibility:
+      required: true
+    description: "Claim detail page with timeline, document actions, and AI recommendations."
