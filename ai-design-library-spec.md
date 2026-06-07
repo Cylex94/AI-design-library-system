@@ -51,6 +51,57 @@ Codex MUST NOT start from Templates.
 
 Codex MUST NOT generate the entire library at once.
 
+Generation Preconditions
+Before any generation task starts, a valid source must exist.
+
+Valid sources:
+
+- Figma File
+
+- Figma Branch
+
+- Figma Library
+
+- Figma Export
+
+If no source is available:
+
+DO NOT:
+
+- Generate YAML
+
+- Generate Tokens
+
+- Generate Components
+
+- Generate Documentation
+
+INSTEAD:
+
+- Ask the user for the source
+
+- Wait for the response
+
+Generation is blocked until a source is provided.
+
+Question First Policy
+
+When information required for generation is missing:
+
+1. Stop generation
+
+2. Ask the missing questions
+
+3. Wait for answers
+
+4. Continue only after answers are received
+
+Never assume missing design data.
+
+Never create placeholder outputs.
+
+Never synthesize design decisions.
+
 ---
 
 ## 4. Discovery Mode
