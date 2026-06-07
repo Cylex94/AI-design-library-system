@@ -1,0 +1,312 @@
+# project-tokens.yaml
+# AI Design Library Project Tokens v1.0
+
+tokens:
+  version: "1.0"
+  language: "en"
+  purpose: "Defines the minimum visual inputs Codex needs to generate a token-driven Figma design library."
+
+brand:
+  colors:
+    primary:
+      value: "#8B5CF6"
+      scale_role: 500
+      token_prefix: "sys-color-primary"
+
+    secondary:
+      value: "#353947"
+      scale_role: 500
+      token_prefix: "sys-color-secondary"
+
+    neutral:
+      value: "#64748B"
+      scale_role: 500
+      token_prefix: "sys-color-neutral"
+
+    success:
+      value: "#22C55E"
+      scale_role: 500
+      token_prefix: "sys-color-success"
+
+    warning:
+      value: "#F97316"
+      scale_role: 500
+      token_prefix: "sys-color-warning"
+
+    error:
+      value: "#EF4444"
+      scale_role: 500
+      token_prefix: "sys-color-error"
+
+    info:
+      value: "#FBBF24"
+      scale_role: 500
+      token_prefix: "sys-color-info"
+
+color_generation:
+  enabled: true
+  input_color_is_scale_step: 500
+
+  scale:
+    - 50
+    - 100
+    - 200
+    - 300
+    - 400
+    - 500
+    - 600
+    - 700
+    - 800
+    - 900
+    - 950
+
+  output_format:
+    token_naming: "sys-color-{role}-{step}"
+    example: "sys-color-primary-500"
+
+  required_roles:
+    - primary
+    - secondary
+    - neutral
+    - success
+    - warning
+    - error
+    - info
+
+  rules:
+    - "Treat the provided color value as the 500 step."
+    - "Generate lighter values from 50 to 400."
+    - "Generate darker values from 600 to 950."
+    - "Keep hue consistency unless accessibility requires adjustment."
+    - "Generated scales must support both light and dark mode if dark mode is enabled."
+    - "Do not hardcode generated colors directly inside components."
+    - "Every component must reference color tokens."
+
+typography:
+  font_family: "Inter"
+
+  generation:
+    enabled: true
+    designer_can_modify_scale: true
+
+    roles:
+      - display
+      - heading
+      - title
+      - body
+      - label
+      - caption
+
+  output_format:
+    token_naming: "sys-typography-{role}-{size}"
+    example: "sys-typography-body-md"
+
+  default_roles:
+    display:
+      sizes: [lg, md, sm]
+    heading:
+      sizes: [xl, lg, md, sm]
+    title:
+      sizes: [lg, md, sm]
+    body:
+      sizes: [lg, md, sm]
+    label:
+      sizes: [lg, md, sm]
+    caption:
+      sizes: [md, sm]
+
+  rules:
+    - "Use only the provided font family as the base."
+    - "Generate a complete typography scale from the base font family."
+    - "Designers may modify the generated scale according to project needs."
+    - "Typography must be tokenized."
+    - "Do not hardcode font size, line height, letter spacing, or font weight inside components."
+
+spacing:
+  base_grid: 4
+
+  scale:
+    - 2
+    - 4
+    - 8
+    - 12
+    - 16
+    - 24
+    - 32
+    - 40
+    - 48
+    - 64
+    - 80
+    - 96
+    - 128
+
+  output_format:
+    token_naming: "sys-spacing-{value}"
+    example: "sys-spacing-16"
+
+  rules:
+    - "Use 4pt grid as the default spacing logic."
+    - "Use spacing tokens for padding, gaps, margins, and layout spacing."
+    - "Do not hardcode spacing values inside components."
+
+radius:
+  scale:
+    - 0
+    - 2
+    - 4
+    - 8
+    - 12
+    - 16
+    - 24
+    - 999
+
+  output_format:
+    token_naming: "sys-radius-{value}"
+    example: "sys-radius-12"
+
+  rules:
+    - "Use radius tokens for all rounded corners."
+    - "Use sys-radius-999 for fully rounded pills, chips, and circular elements."
+    - "Do not hardcode radius values inside components."
+
+borders:
+  widths:
+    - 0
+    - 1
+    - 2
+
+  output_format:
+    token_naming: "sys-border-width-{value}"
+    example: "sys-border-width-1"
+
+  rules:
+    - "Use border width tokens for all strokes."
+    - "Use color tokens for all border colors."
+
+elevation:
+  style: "soft"
+
+  levels:
+    - none
+    - xs
+    - sm
+    - md
+    - lg
+    - xl
+
+  output_format:
+    token_naming: "sys-elevation-{level}"
+    example: "sys-elevation-md"
+
+  rules:
+    - "Generate subtle elevation tokens suitable for scalable product interfaces."
+    - "Use elevation only when it improves hierarchy or interaction clarity."
+    - "Do not overuse shadows in dense enterprise interfaces."
+
+icons:
+  providers:
+    - lucide
+    - material_design_icons
+
+  default_provider: "lucide"
+
+  sizes:
+    - 16
+    - 20
+    - 24
+    - 32
+
+  output_format:
+    token_naming: "sys-icon-size-{value}"
+    example: "sys-icon-size-24"
+
+  rules:
+    - "Use consistent icon sizes."
+    - "Use stroke-based icons when using Lucide."
+    - "Use filled or outlined icons consistently when using Material Design Icons."
+    - "Do not mix icon styles randomly within the same product."
+
+theme:
+  modes:
+    light:
+      enabled: true
+
+    dark:
+      ask_before_generation: true
+      enabled: null
+
+  rules:
+    - "Generate light mode by default."
+    - "Ask before generating dark mode."
+    - "If dark mode is enabled, generate semantic surface, text, border, and state tokens for dark mode."
+    - "Do not simply invert colors for dark mode."
+
+semantic_tokens:
+  enabled: true
+
+  required_groups:
+    - surface
+    - text
+    - border
+    - icon
+    - action
+    - feedback
+    - state
+
+  output_format:
+    token_naming: "sys-{group}-{role}-{state}"
+    example: "sys-action-primary-default"
+
+  rules:
+    - "Raw color scales must not be used directly in components when semantic tokens are available."
+    - "Components should reference semantic tokens instead of raw color scale tokens."
+    - "Semantic tokens must map to generated color scales."
+
+density_tokens:
+  enabled: true
+
+  modes:
+    - compact
+    - comfortable
+    - spacious
+
+  rules:
+    - "Density affects padding, gaps, control height, and table row height."
+    - "Density must not create separate duplicate components."
+    - "Density should be implemented using variants or component properties."
+
+accessibility_tokens:
+  enabled: true
+
+  rules:
+    - "Focus ring must be tokenized."
+    - "Disabled opacity must be tokenized."
+    - "Minimum touch target must be defined."
+    - "Contrast-sensitive text and surface combinations must be checked."
+
+generation:
+  generate_color_scales: true
+  generate_semantic_tokens: true
+  generate_typography_scale: true
+  generate_spacing_tokens: true
+  generate_radius_tokens: true
+  generate_border_tokens: true
+  generate_elevation_tokens: true
+  generate_icon_size_tokens: true
+  generate_density_tokens: true
+  generate_accessibility_tokens: true
+
+codex_rules:
+  always:
+    - "Read project-tokens.yaml before creating foundations or components."
+    - "Use provided color values as 500 scale values."
+    - "Generate complete 50-950 color scales."
+    - "Generate semantic tokens after raw color scales."
+    - "Use semantic tokens in components whenever possible."
+    - "Use typography, spacing, radius, border, elevation, and icon tokens consistently."
+
+  never:
+    - "Do not hardcode visual values inside components."
+    - "Do not use raw color hex values directly in components."
+    - "Do not create component-specific colors unless they are defined as semantic tokens."
+    - "Do not skip token documentation."

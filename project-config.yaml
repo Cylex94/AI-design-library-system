@@ -1,0 +1,182 @@
+# project-config.yaml
+# AI Design Library Project Configuration v1.0
+
+config:
+  version: "1.0"
+  language: "en"
+  purpose: "Defines project-level decisions used by Codex when generating a Figma design library."
+
+discovery_mode:
+  mode: "interactive" # interactive | assisted | automated
+
+  behavior:
+    ask_required_questions: true
+    ask_optional_questions: true
+    suggest_missing_requirements: true
+    identify_scope_risks: true
+    identify_accessibility_risks: true
+    identify_design_system_risks: true
+    require_user_confirmation_before_generation: true
+
+team:
+  target_users:
+    - ux_designer
+    - ui_designer
+
+  experience_level:
+    - junior
+    - mid
+    - senior
+
+  ai_guidance_level: "high" # high | medium | low
+
+project:
+  name: ""
+  description: ""
+  client: ""
+  product_type: "" # mobile_app | responsive_web_app | admin_dashboard | management_console | customer_portal | marketing_website | design_system | ai_workspace | super_app | internal_tool
+  industry: "" # banking | insurance | fintech | e_commerce | marketplace | mobility | saas | ai_platform | healthcare | telecommunications | education | media | government | internal_enterprise_tools | custom
+  custom_industry: ""
+  maturity_level: "" # 1 | 2 | 3 | 4 | 5
+
+platforms:
+  desktop: false
+  responsive_web: false
+  tablet: false
+  mobile: false
+  admin_dashboard: false
+
+theme:
+  selected:
+    - "" # minimal | corporate | enterprise | premium | luxury | friendly | playful | developer | technical | ai_native | data_heavy | fintech | banking | modern_saas | custom
+
+  custom_theme: ""
+
+appearance:
+  light_mode: true
+
+  dark_mode:
+    ask_before_generation: true
+    enabled: null # true | false | null
+
+accessibility:
+  target: "wcag_aa"
+  require_visible_focus_state: true
+  require_contrast_compliance: true
+  require_minimum_touch_target: true
+  disabled_state_must_not_rely_on_color_only: true
+  keyboard_navigation_required: true
+
+generation:
+  strategy: "core_first"
+
+  generate:
+    foundations: true
+    core_components: true
+    advanced_components: false
+    optional_components: false
+    industry_components: false
+    ai_components: false
+    patterns: false
+    templates: false
+
+  ask_before:
+    advanced_components: true
+    optional_components: true
+    industry_components: true
+    ai_components: true
+    patterns: true
+    templates: true
+
+  stop_after_core_generation: true
+  present_inventory_after_core_generation: true
+  run_self_audit_after_generation: true
+
+library_scope:
+  ui_components_only: true
+  research_templates: false
+  workshop_templates: false
+  persona_templates: false
+  journey_map_templates: false
+  service_blueprint_templates: false
+
+figma:
+  file_structure:
+    - "00 Cover"
+    - "01 Foundations"
+    - "02 Tokens"
+    - "03 Components"
+    - "04 Patterns"
+    - "05 Templates"
+    - "06 Documentation"
+    - "07 Playground"
+    - "08 Archive"
+
+  naming_language: "english"
+
+  atomic_design_structure:
+    enabled: true
+    mandatory: true
+
+  required_component_quality:
+    auto_layout: true
+    variables: true
+    component_properties: true
+    nested_components: true
+    responsive_resizing: true
+    variants: true
+    states: true
+    sizes: true
+    documentation: true
+    usage_notes: true
+    accessibility_notes: true
+    do_dont_examples: true
+    token_references: true
+
+governance:
+  workflow:
+    - design
+    - review
+    - client
+    - development
+
+  require_review_before_client_handoff: true
+  require_clean_client_file: true
+  require_clean_development_file: true
+  prohibit_internal_notes_in_client_file: true
+  prohibit_unapproved_components_in_development_file: true
+
+audit:
+  enabled: true
+
+  report:
+    missing_components: true
+    duplicate_components: true
+    undocumented_components: true
+    accessibility_issues: true
+    token_usage_issues: true
+    responsive_issues: true
+    naming_issues: true
+    governance_issues: true
+
+codex_behavior:
+  always:
+    - "Read ai-design-library-spec.md first."
+    - "Read project-config.yaml second."
+    - "Read project-tokens.yaml third."
+    - "Read component-registry.yaml fourth."
+    - "Ask discovery questions when discovery_mode is interactive."
+    - "Generate core library first."
+    - "Use design tokens for all visual properties."
+    - "Use Auto Layout for every component."
+    - "Document every component."
+    - "Run self-audit before reporting completion."
+
+  never:
+    - "Do not generate everything by default."
+    - "Do not create components before discovery is complete."
+    - "Do not create industry-specific components unless required."
+    - "Do not hardcode colors, typography, spacing, radius, or borders."
+    - "Do not create duplicate components."
+    - "Do not create fixed-width components without responsive rules."
+    - "Do not skip accessibility documentation."
